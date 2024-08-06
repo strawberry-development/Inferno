@@ -24,23 +24,20 @@ require_once 'tripcode/tripcode.php';
     </script>
 </head>
 <body>
-    <pre>
-       T
-     .-"-.
-    |  ___|
-    | (.\/.)
-    |  ,,,'   Inferno - Tripcode System
-    | '###
-     '----'
-    </pre>
-    <h2>Parameter</h2>
-    <p>Key information</p>
-    <?php echo "<p>Secret key: <strong>" . htmlspecialchars(SECRET_KEY) . "</strong></p>"; ?>
-    <hr>
+<div class="container">
+        <pre>
+           T
+         .-"-.
+        |  ___|
+        | (.\/.)
+        |  ,,,'   Inferno - Tripcode System
+        | '###
+         '----'
+        </pre>
     <h2>Session Information</h2>
 
     <?php if (!empty($errors)): ?>
-        <ul>
+        <ul class="error-list">
             <?php foreach ($errors as $error): ?>
                 <li><?php echo htmlspecialchars($error); ?></li>
             <?php endforeach; ?>
@@ -48,12 +45,13 @@ require_once 'tripcode/tripcode.php';
     <?php endif; ?>
 
     <form method="post" action="">
-        <div style="display: flex; gap: 10px;">
-            <div>
+        <div class="form-group">
+            <div class="input-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>"
+                       required>
             </div>
-            <div>
+            <div class="input-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
@@ -64,7 +62,7 @@ require_once 'tripcode/tripcode.php';
     <hr>
     <h2>Generated</h2>
     <?php if ($success): ?>
-        <table>
+        <table class="result-table">
             <tr>
                 <th>Username</th>
                 <th>Tripcode</th>
@@ -77,5 +75,12 @@ require_once 'tripcode/tripcode.php';
             </tr>
         </table>
     <?php endif; ?>
+</div>
+
+<div class="container">
+    <p>Key information</p>
+    <?php echo "<pre>Secret key: <strong>" . htmlspecialchars(SECRET_KEY) . "</strong></pre>"; ?>
+</div>
+
 </body>
 </html>
