@@ -91,8 +91,8 @@ require_once 'tripcode/account.php';
 <div class="container">
     <h2>Account Information</h2>
     <em>IP-based ID generation</em>
-    <h2><?php echo htmlspecialchars($_SESSION['username']); ?></h2>
-    <p>You are identified by your IP: <?php echo htmlspecialchars($ip); ?></p>
+    <p>You are identified by your ID: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
+    <p>IP: <?php echo htmlspecialchars($ip); ?></p>
     <p>Login Time: <?php echo htmlspecialchars($_SESSION['login_time']); ?></p>
 </div>
 
