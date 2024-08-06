@@ -1,5 +1,6 @@
 <?php
 require_once 'tripcode/tripcode.php';
+require_once 'tripcode/account.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +29,7 @@ require_once 'tripcode/tripcode.php';
     </script>
 </head>
 <body>
+
 <div class="container">
         <pre>
            T
@@ -84,6 +86,14 @@ require_once 'tripcode/tripcode.php';
 <div class="container">
     <p>Key information</p>
     <?php echo "<pre>Secret key: <strong>" . htmlspecialchars(SECRET_KEY) . "</strong></pre>"; ?>
+</div>
+
+<div class="container">
+    <h2>Account Information</h2>
+    <em>IP-based ID generation</em>
+    <h2><?php echo htmlspecialchars($_SESSION['username']); ?></h2>
+    <p>You are identified by your IP: <?php echo htmlspecialchars($ip); ?></p>
+    <p>Login Time: <?php echo htmlspecialchars($_SESSION['login_time']); ?></p>
 </div>
 
 </body>
