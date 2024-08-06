@@ -63,15 +63,19 @@ require_once 'tripcode/tripcode.php';
     </form>
     <hr>
     <h2>Generated</h2>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>Tripcode</th>
-        </tr>
-        <tr>
-            <td><?php echo htmlspecialchars($username); ?></td>
-            <td><?php echo htmlspecialchars($tripcode); ?></td>
-        </tr>
-    </table>
+    <?php if ($success): ?>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Tripcode</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td><?php echo htmlspecialchars($username); ?></td>
+                <td><?php echo htmlspecialchars($tripcode); ?></td>
+                <td style="background-color: <?php echo htmlspecialchars($color); ?>;"><?php echo htmlspecialchars($color); ?></td>
+            </tr>
+        </table>
+    <?php endif; ?>
 </body>
 </html>
