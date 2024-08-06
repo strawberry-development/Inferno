@@ -1,0 +1,2 @@
+# Inferno
+ Simple Tripcode System
