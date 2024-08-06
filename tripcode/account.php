@@ -13,7 +13,7 @@ if (!isset($users[$userId])) {
         'ip' => $ip,
         'login_time' => date('Y-m-d H:i:s')
     ];
-    file_put_contents('account.php', "<?php\n\$users = " . var_export($users, true) . ";\n");
+    // Do something
 }
 
 $_SESSION['username'] = $users[$userId]['username'];
