@@ -1,7 +1,7 @@
 <?php
 function generateUserIdFromIp($ip): string
 {
-    return hash('sha256', $ip);
+    return hash('sha256', SECRET_KEY . $ip . ' + ' . SECRET_KEY);
 }
 
 $ip = $_SERVER['REMOTE_ADDR'];

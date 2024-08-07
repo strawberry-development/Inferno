@@ -40,6 +40,9 @@ require_once 'tripcode/account.php';
         | '###
          '----'
         </pre>
+</div>
+
+<div class="container">
     <h2>Session Information</h2>
 
     <?php if (!empty($errors)): ?>
@@ -91,8 +94,8 @@ require_once 'tripcode/account.php';
 <div class="container">
     <h2>Account Information</h2>
     <em>IP-based ID generation</em>
-    <p>You are identified by your ID: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
-    <p>IP: <?php echo htmlspecialchars($ip); ?></p>
+    <p>ID: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
+    <p>IP used: <?php echo htmlspecialchars($ip); ?></p>
     <p>Login Time: <?php echo htmlspecialchars($_SESSION['login_time']); ?></p>
 </div>
 
